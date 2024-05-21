@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "SimpleDirectedGraph.h"
-
+ // TODO - Error check
 void main() {
 	int n,m;
 	SimpleDirectedGraph g;
@@ -15,7 +15,25 @@ void main() {
 	for (int i = 0; i < m; i++) {
 		cout << "edge number " << (i + 1) << ":" << endl;
 		cin >> u >> v;
-		g.addEdge(u-1, v-1);
+		g.addEdge(u, v);
 	}
+	cout << "ORIGINAL:" << endl;
 	g.printGraph();
+
+	list<int> finish = g.finishedListDFS();
+	for (int i : finish) {
+		cout << i << ", ";
+	}
+	cout << endl << "TRANSPOSE" << endl;;
+	SimpleDirectedGraph gT = g.getTransposeGraph();
+	gT.printGraph();
 }
+
+// TODO
+// 1. DFS functions
+// 2. Build G^T
+// 3. 
+
+
+// 4 , 2 , 3, 1, 6, 5
+

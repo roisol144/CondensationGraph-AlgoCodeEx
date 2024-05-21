@@ -3,12 +3,13 @@
 using namespace std;
 #include <vector>
 #include <list>
+#include "Vertex.h"
 using namespace std;
 class SimpleDirectedGraph {
 private:
 	int n;
 	int m;
-	vector<list<int>> adjacentArr;
+	vector<Vertex*> vertices;
 
 public:
 	// created empty graph with n vertices.
@@ -28,4 +29,16 @@ public:
 
 	//prints the adjacent array of the graph
 	void printGraph();
+
+	list<int> finishedListDFS();
+
+	void visit(Vertex* v, list<int>* finishedList);
+
+	SimpleDirectedGraph getTransposeGraph();
+	
 };
+
+
+
+
+// 
