@@ -16,7 +16,7 @@ public:
 	void makeEmptyGraph(int n);
 
 	// checking valid Vertices
-	//bool isValidVertices(int u, int v);
+	void isValidVertices(int u, int v, int numOfVertices);
 
 	//returns true if the edge (u,v) is in the graph, false otherwise.
 	bool isAdjacent(int u, int v);
