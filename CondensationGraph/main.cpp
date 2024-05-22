@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "SimpleDirectedGraph.h"
+#include <stdlib.h>
  // TODO - Error check
 void main() {
 	int n,m;
@@ -15,6 +16,12 @@ void main() {
 	for (int i = 0; i < m; i++) {
 		cout << "edge number " << (i + 1) << ":" << endl;
 		cin >> u >> v;
+		if (u > n || u < 1 || v < 1 || v > n || !isdigit('0' + u) || !isdigit('0' + v))
+		{
+			cout << "Invalid input" << endl;
+			exit(1);
+		}
+
 		g.addEdge(u, v);
 	}
 	cout << "ORIGINAL:" << endl;

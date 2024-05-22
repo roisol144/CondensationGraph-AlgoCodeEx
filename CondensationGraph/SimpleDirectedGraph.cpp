@@ -9,6 +9,17 @@ void SimpleDirectedGraph::makeEmptyGraph(int n) {
 	}
 }
 
+/*bool SimpleDirectedGraph::isValidVertices(int u, int v)
+{
+	if (u > n || u < 1 || v < 1 || v > n || isdigit(u) == false || isdigit(v) == false)
+	{
+		cout << "Invalid input" << endl;
+		return false;
+	}
+	return true;
+}
+*/
+
 bool SimpleDirectedGraph::isAdjacent(int u, int v) {
 	return find((*vertices[u - 1]->getVertexAdjacentList()).begin(),
 				(*vertices[u - 1]->getVertexAdjacentList()).end(), v) != (*vertices[u - 1]->getVertexAdjacentList()).end();
