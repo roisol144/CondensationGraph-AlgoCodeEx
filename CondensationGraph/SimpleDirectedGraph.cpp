@@ -1,4 +1,5 @@
 #include "SimpleDirectedGraph.h"
+#include "MyExceptions.h"
 
 void SimpleDirectedGraph::makeEmptyGraph(int n) {
 	this->vertices.clear();
@@ -9,16 +10,18 @@ void SimpleDirectedGraph::makeEmptyGraph(int n) {
 	}
 }
 
-/*bool SimpleDirectedGraph::isValidVertices(int u, int v)
+void SimpleDirectedGraph::isValidVertices(int u, int v, int numOfVertices)
 {
-	if (u > n || u < 1 || v < 1 || v > n || isdigit(u) == false || isdigit(v) == false)
+	if (u > numOfVertices || u < 1 || v < 1 || v > numOfVertices)
 	{
-		cout << "Invalid input" << endl;
-		return false;
+		throw OutOfBoundsException();
 	}
-	return true;
+	if (!isdigit('0' + u) || !isdigit('0' + v))
+	{
+		throw WrongTypeException();
+	}
 }
-*/
+
 
 bool SimpleDirectedGraph::isAdjacent(int u, int v) {
 	return find((*vertices[u - 1]->getVertexAdjacentList()).begin(),

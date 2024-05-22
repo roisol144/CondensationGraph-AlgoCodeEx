@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MyExceptions.cpp" />
     <ClCompile Include="SimpleDirectedGraph.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyExceptions.h" />
     <ClInclude Include="SimpleDirectedGraph.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
