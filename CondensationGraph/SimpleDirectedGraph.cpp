@@ -71,9 +71,14 @@ list<int> SimpleDirectedGraph::finishedListDFS()
 void SimpleDirectedGraph::visit(Vertex* v, list<int>* finishedList)
 {
 	v->setVertexColor(1);
-	for (list<int>::iterator i = (*v->getVertexAdjacentList()).begin(); i != (*v->getVertexAdjacentList()).end(); ++i) {
+	/*for (list<int>::iterator i = (*v->getVertexAdjacentList()).begin(); i != (*v->getVertexAdjacentList()).end(); ++i) {
 		if (vertices[*i - 1]->getVertexColor() == 0) {
 			visit(vertices[*i - 1], finishedList);
+		}
+	}*/
+	for (int u: *v->getVertexAdjacentList()) {
+		if (vertices[u - 1]->getVertexColor() == 0) {
+			visit(vertices[u - 1], finishedList);
 		}
 	}
 	finishedList->push_back(v->getVertexIndex());
