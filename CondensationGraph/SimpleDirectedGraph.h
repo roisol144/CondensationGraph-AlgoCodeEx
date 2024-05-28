@@ -12,6 +12,11 @@ private:
 	vector<Vertex*> vertices;
 
 public:
+	int getN() { return n; }
+	int getM() { return m; }
+	void setN(int num);
+	void setM(int num);
+
 	// created empty graph with n vertices.
 	void makeEmptyGraph(int n);
 
@@ -25,7 +30,7 @@ public:
 	list<int> getAdjList(int u);
 
 	//adds the edge (u,v) to the graph
-	void addEdge(int u, int v);
+	void addEdge(int index, int u, int v);
 
 	//removes the edge (u,v) from the graph
 	void removeEdge(int u, int v);
@@ -35,13 +40,17 @@ public:
 
 	list<int> finishedListDFS();
 
-	void visit(Vertex* v, list<int>* finishedList);
+	void visitForFinishListDFS(Vertex* v, list<int>* finishedList);
 
 	SimpleDirectedGraph getTransposeGraph();
 	
+	SimpleDirectedGraph treesDFS(list<int> loopOrder);
+
+	void visitForTreesDFS(Vertex* v, SimpleDirectedGraph* tree, SimpleDirectedGraph* condensationGraph);
+
+	void resetColors();
+
 };
 
 
 
-
-// 

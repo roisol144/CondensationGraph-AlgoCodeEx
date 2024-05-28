@@ -15,7 +15,7 @@ class ValueNotSupportedException : public MyExceptions {};
 class OutOfBoundsException : public ValueNotSupportedException
 {};
 
-class WrongTypeException : public ValueNotSupportedException
+class InvalidEdgeException : public ValueNotSupportedException
 {};
 
 

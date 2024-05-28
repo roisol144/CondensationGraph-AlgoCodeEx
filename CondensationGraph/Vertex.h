@@ -11,11 +11,28 @@ private:
 	int index;
 	list<int> adjacentList;
 	int color = 0;
+	int treeRepresentative = -1;
+	int repIndex;
 
 
 public:
 
+	Vertex(int index) {
+		this->index = index;
+	}
 	
+	Vertex(int index, int treeRepresentative)
+	{
+		this->index = index;
+		this->treeRepresentative = treeRepresentative;
+	}
+
+	int getRepIndex() {
+		return repIndex;
+	}
+	void setRepIndex(int index) {
+		this->repIndex = index;
+	}
 	int getVertexIndex()
 	{
 		return index;
@@ -49,6 +66,17 @@ public:
 	{
 		this->color = color;
 	}
+
+	int getRepresentative()
+	{
+		return treeRepresentative;
+	}
+
+	void setRepresentative(int rep)
+	{
+		treeRepresentative = rep;
+	}
+
 
 };
 
